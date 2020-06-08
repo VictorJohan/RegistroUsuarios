@@ -13,6 +13,7 @@ namespace RegistroUsuario.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite(@"Data Source= DATA\Usuarios.db");
+            
         }
     }
 }
