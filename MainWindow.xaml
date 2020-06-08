@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroUsuario"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Registro Usuarios" Height="280" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            <Label Content="Id Usuario" FontWeight="Bold"/>
+            
+            <StackPanel Orientation="Horizontal" Margin="5,0,5,10" HorizontalAlignment="Left" Width="230">
+                <TextBox Name="idUsuarioTextBox" Text="{Binding IdUsuario}" Width="150"/>
+                
+                <Button Name="buscarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="buscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/search.png" />
+                        <Label Content="Buscar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
 
+            <Label Content="Nombre" FontWeight="Bold"/>
+            <TextBox Name="nombreTextBox" Width="150" Margin="5,0,5,10" Text="{Binding Nombre}" HorizontalAlignment="Left" Height="20"/>
+
+            <Label Content="Clave" FontWeight="Bold"/>
+            <TextBox Name="claveTextBox" Width="150" Margin="5,0" Text="{Binding Clave}" HorizontalAlignment="Left" Height="20"/>
+
+            <StackPanel Orientation="Horizontal" Margin="42,35,5,0" HorizontalAlignment="Left" Width="220">
+               
+                <Button Name="nuevoButton" Width="60" Height="20" Click="nuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/persona.png" />
+                        <Label Content="Nuevo" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="guardarButton" Width="66" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="guardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/save.png" />
+                        <Label Content="Guardar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="eliminarButton" Width="67" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="eliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/delete.png" />
+                        <Label Content="Eliminar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Window>
