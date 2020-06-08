@@ -10,7 +10,7 @@ using System.Text;
 
 namespace RegistroUsuario.BLL
 {
-    class UsuariosBLL
+    public class UsuariosBLL
     {
         public static bool Guardar(Usuarios usuario)
         {
