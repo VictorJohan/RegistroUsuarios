@@ -36,7 +36,13 @@ namespace RegistroUsuario
             Contexto contexto = new Contexto();
             Usuarios usuario = contexto.Usuarios.Find(idUsuarioTextBox.Text);
 
-            if(Usuario != null)
+            if (usuario == null || idUsuarioTextBox.Text == "")
+            {
+                MessageBox.Show("Ese Id no existe.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            if (Usuario != null)
             {
                 this.Usuario = usuario;
             }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroUsuario"
         mc:Ignorable="d"
-        Title="Registro Usuarios" Height="280" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Registro Usuarios" Height="280" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/persona.png">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,10,10,10">
             <Label Content="Id Usuario" FontWeight="Bold"/>
