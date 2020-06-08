@@ -11,5 +11,6 @@ namespace RegistroUsuario.Entidades
         public string IdUsuario { get; set; }
         public string Clave { get; set; }
         public string Nombre { get; set; }
+
     }
 }

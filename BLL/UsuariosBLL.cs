@@ -53,7 +53,7 @@ namespace RegistroUsuario.BLL
 
             try
             {
-                
+
                 contexto.Usuarios.Add(usuario);
                 ok = contexto.SaveChanges() > 0;
             }
