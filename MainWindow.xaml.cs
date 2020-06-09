@@ -31,16 +31,9 @@ namespace RegistroUsuario
             this.DataContext = Usuario;
         }
 
-        private void buscarButton_Click(object sender, RoutedEventArgs e)
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            Contexto contexto = new Contexto();
-            Usuarios usuario = contexto.Usuarios.Find(idUsuarioTextBox.Text);
-
-            if (usuario == null || idUsuarioTextBox.Text == "")
-            {
-                MessageBox.Show("Ese Id no existe.", "Aviso.", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
+            Usuarios usuario = UsuariosBLL.Buscar(idUsuarioTextBox.Text);
 
             if (Usuario != null)
             {
@@ -49,24 +42,25 @@ namespace RegistroUsuario
             else
             {
                 this.Usuario = new Usuarios();
-                this.Usuario = usuario;
             }
 
             this.DataContext = this.Usuario;
 
         }
 
-        private void nuevoButton_Click(object sender, RoutedEventArgs e)
+        private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
         }
 
-        private void guardarButton_Click(object sender, RoutedEventArgs e)
+        private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
             if (!Validar())
             {
                 return;
             }
+
+            Usuario.Clave = clavePasswordBox.Text;
 
             if (UsuariosBLL.Guardar(Usuario))
             {
@@ -78,9 +72,10 @@ namespace RegistroUsuario
             }
 
             Limpiar();
+
         }
 
-        private void eliminarButton_Click(object sender, RoutedEventArgs e)
+        private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             if (UsuariosBLL.Eliminar(idUsuarioTextBox.Text))
             {
@@ -98,18 +93,17 @@ namespace RegistroUsuario
         {
             this.Usuario = new Usuarios();
             this.DataContext = this.Usuario;
+
         }
 
         public bool Validar()
         {
-            
-            if(!Regex.IsMatch(nombreTextBox.Text, @"^[A-Za-z]+$"))
+
+            if (!Regex.IsMatch(nombreTextBox.Text, @"^[A-Za-z]+$"))
             {
-                if (UsuariosBLL.Guardar(Usuario))
-                {
-                    MessageBox.Show("Asegurese de haber ingresado un nombre valido.", "Nombre no valido.", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return false;
-                }
+                MessageBox.Show("Asegurese de haber ingresado un nombre valido.", "Nombre no valido.", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+
             }
 
             return true;
