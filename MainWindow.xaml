@@ -3,65 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RegistroUsuario"
         mc:Ignorable="d"
-        Title="Registro Usuarios" Height="280" Width="289" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/usuario.png">
+        Title="Menu" Height="280" Width="289" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Resources/usuario.png">
     
     <Grid>
-        <!--Stack Panel principal-->
-        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
-            <Label Content="Id Usuario" FontSize="10"/>
-            
-            <!--Este Stack Panel contiene el Text Box de de usuario y el boton buscar-->
-            <StackPanel Orientation="Horizontal" Margin="5,0,5,10" HorizontalAlignment="Left" Width="230">
-
-                <!--Text Box usuario-->
-                <TextBox Name="idUsuarioTextBox" Text="{Binding IdUsuario}" Width="150"/>
-                
-                <!--Boton buscar-->
-                <Button Name="BuscarButton" Width="60" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="BuscarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/search.png" />
-                        <Label Content="Buscar" Padding="-1" Margin="5,0,0,0"/>
-                    </StackPanel>
-                </Button>
-                
-            </StackPanel>
-
-            <!--Label Nombre y Text Box Nombre-->
-            <Label Content="Nombre" FontSize="10"/>
-            <TextBox Name="nombreTextBox" Width="150" Margin="5,0,5,10" Text="{Binding Nombre}" HorizontalAlignment="Left" Height="20"/>
-
-            <!--Label Clave y Text Box Clave-->
-            <Label Content="Clave" FontSize="10"/>
-            <TextBox Name="clavePasswordBox" Width="150" Text="{Binding Clave}" Margin="5,0" HorizontalAlignment="Left" Height="20"/>
-
-            <!--Este Stack Panel contiene los botones Nuevo, Guardar y Eliminar-->
-            <StackPanel Orientation="Horizontal" Margin="12,35,5,0" HorizontalAlignment="Left" Width="220">
-               <!--Boton Nuevo-->
-                <Button Name="NuevoButton" Width="60" Height="20" Click="NuevoButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/persona.png" />
-                        <Label Content="Nuevo" Padding="-1" Margin="5,0,0,0"/>
-                    </StackPanel>
-                </Button>
-                <!--Boton Guardar-->
-                <Button Name="GuardarButton" Width="68" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="GuardarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/save.png" />
-                        <Label Content="Guardar" Padding="-1" Margin="5,0,0,0"/>
-                    </StackPanel>
-                </Button>
-                <!--Boton Eliminar-->
-                <Button Name="EliminarButton" Width="67" Height="20" HorizontalContentAlignment="Left" Margin="11,0,0,0" Click="EliminarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Resources/delete.png" />
-                        <Label Content="Eliminar" Padding="-1" Margin="3,0,0,0"/>
-                    </StackPanel>
-                </Button>
-
-            </StackPanel>
-
+        <StackPanel>
+            <Menu Height="18">
+                <MenuItem Header="Registros">
+                    <MenuItem Name="RegistrosMenuItem" Header="Registrar Usuarios" Click="RegistrosMenuItem_Click"/>
+                    
+                </MenuItem>
+            </Menu>
         </StackPanel>
     </Grid>
 </Window>
+
+    
